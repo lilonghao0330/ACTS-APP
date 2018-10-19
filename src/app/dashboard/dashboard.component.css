@@ -135,9 +135,9 @@ td{
   text-align: center;
 }
 .demo-chart {
-  height: 400px;
+  height: auto;
   width: 500px;
-  display: inline-block;
+  display: block;
   margin: 60px;
   float: left;
 }

@@ -66,19 +66,53 @@ export class DashboardComponent implements OnInit {
             }
           ]
         }
+        var labelRight = {
+    normal: {
+        position: 'right'
+    }
+};
         var chartOption2 = {
-
-        xAxis: {
-          type: 'category',
-          data: xaxis,
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: [{
-          data:  data2,
-          type: 'bar'
-        }]
+          title: {
+          text: '目標達成率一覧',
+          x: 'center'
+      },
+      tooltip : {
+          trigger: 'axis',
+          axisPointer : {
+              type : 'shadow'
+          }
+      },
+      grid: {
+          top: 80,
+          bottom: 30
+      },
+      xAxis: {
+          type : 'value',
+          position: 'top',
+          splitLine: {lineStyle:{type:'dashed'}},
+      },
+      yAxis: {
+          type : 'category',
+          axisLine: {show: false},
+          axisLabel: {show: false},
+          axisTick: {show: false},
+          splitLine: {show: false},
+          data : xaxis
+      },
+      series : [
+          {
+              name:'達成率',
+              type:'bar',
+              stack: 'total',
+              label: {
+                  normal: {
+                      show: true,
+                      formatter: '{b}'
+                  }
+              },
+              data:data2,
+          }
+      ]
       }
         this.chartOption1 = chartOption1;
         this.chartOption2 = chartOption2;
