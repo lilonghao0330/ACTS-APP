@@ -23,27 +23,6 @@ h3 {
 h4 {
   position: relative;
 }
-.crown1{
-  width: 5%;
-  height: auto;
-  position: absolute;
-  left: 30%;
-  top: 35%;
-}
-.crown2{
-  width: 5%;
-  height: auto;
-  position: absolute;
-  left: 50%;
-  top: 35%;
-}
-.crown3{
-  width: 5%;
-  height: auto;
-  position: absolute;
-  left: 70%;
-  top: 35%;
-}
 .grid {
   margin: 0;
 }
