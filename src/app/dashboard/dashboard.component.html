@@ -13,10 +13,12 @@
     </ul>
   </div>
   <div class="col-2-3">
-    <h2>
-      社員別営業成績
-    </h2>
+    <div echarts [options]="chartOption" class="demo-chart"></div>
+    <div echarts [options]="chartOption" class="demo-chart"></div>
     <div class="full-report">
+      <h2>
+        社員別営業成績
+      </h2>
     <table>
       <tr>
         <th>今月順位</th>

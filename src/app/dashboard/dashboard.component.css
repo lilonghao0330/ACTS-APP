@@ -134,3 +134,10 @@ td{
 .full-report{
   float: left;
 }
+.demo-chart {
+  height: 250px;
+  width: 300px;
+  display: inline-block;
+  margin: 20px;
+  float: left;
+}
