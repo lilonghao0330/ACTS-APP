@@ -8,7 +8,7 @@ import { DataentryComponent }      from './dataentry/dataentry.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/rollselect', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'rollselect', component: RollselectComponent },
   { path: 'dataentry', component: DataentryComponent },
