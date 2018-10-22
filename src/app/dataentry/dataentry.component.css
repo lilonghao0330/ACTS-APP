@@ -1,0 +1,72 @@
+.parts_wrapper {
+    margin-bottom: 0px;
+}
+.parts_wrapper {
+    margin-bottom: 20px;
+}
+.parts_contents {
+    background-color: #efefef;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-top-color: #CCC;
+    border-right-color: #CCC;
+    border-left-color: #CCC;
+}
+.parts_name .inner {
+    padding: 25px;
+}
+.hissu {
+    color: #F00;
+    padding-right: 5px;
+}
+.clearfix {
+    overflow: hidden;
+}
+.parts_name {
+    font-size: 14px;
+}
+
+.parts_name {
+    display: table-cell;
+    float: left;
+}
+.parts_name {
+    font-weight: bold;
+    width: 200px;
+    clear: both;
+}
+.input_block {
+    background-color: #FFF;
+}
+
+.input_block {
+    margin-left: 220px;
+}
+.input[type="text"], input[type="password"], textarea, select {
+    padding: 5px;
+    border: 1px solid #d5d5d5;
+    color: #666;
+}
+.input50per {
+    width: 48%;
+}
+.input_block .inner {
+    font-size: 14px;
+}
+.input_block .inner {
+    padding: 25px;
+}
+.last {
+    margin-bottom: 20px;
+    border-bottom: solid #CCC;
+}
+.txtCenter {
+    text-align: center;
+}
+.mb20 {
+    margin-bottom: 20px!important;
+}
