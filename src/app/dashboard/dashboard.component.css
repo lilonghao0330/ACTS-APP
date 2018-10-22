@@ -132,5 +132,12 @@ td{
   padding-top: 5px;
 }
 .full-report{
+  text-align: center;
+}
+.demo-chart {
+  height: auto;
+  width: 500px;
+  display: block;
+  margin: 60px;
   float: left;
 }

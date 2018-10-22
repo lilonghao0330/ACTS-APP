@@ -11,12 +11,14 @@ import { MessagesComponent }    from './messages/messages.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { RollselectComponent } from './rollselect/rollselect.component';
 import { DataentryComponent } from './dataentry/dataentry.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxEchartsModule
   ],
   declarations: [
     AppComponent,
