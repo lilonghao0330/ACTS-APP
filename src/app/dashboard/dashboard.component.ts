@@ -10,7 +10,8 @@ import { EChartOption } from 'echarts';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
-  chartOption : EChartOption;
+  chartOption1 : EChartOption;
+  chartOption2 : EChartOption;
 
   constructor(private heroService: HeroService) { }
 
