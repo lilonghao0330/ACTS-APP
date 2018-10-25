@@ -1,0 +1,25 @@
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { DashboardComponent }   from './dashboard/dashboard.component';
+import { HeroesComponent }      from './heroes/heroes.component';
+import { RollselectComponent }      from './rollselect/rollselect.component';
+import { DataentryComponent }      from './dataentry/dataentry.component';
+import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
+import { D3jsComponent }  from './d3js/d3js.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'rollselect', component: RollselectComponent },
+  { path: 'dataentry', component: DataentryComponent },
+  { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'heroes', component: HeroesComponent },
+  { path: 'd3js', component: D3jsComponent }
+];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule {}
