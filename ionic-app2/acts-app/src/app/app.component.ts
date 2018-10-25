@@ -24,7 +24,7 @@ export class MyApp {
     this.pages = [
       { title: '全体レポート', component: PiechartPage },
       { title: '個人レポート', component: ListPage },
-      { title: 'Home', component: HomePage },
+      { title: '成績入力フォーム', component: HomePage },
     ];
 
   }

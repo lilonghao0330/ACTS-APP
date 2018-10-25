@@ -8,7 +8,35 @@
 </ion-header>
 
 <ion-content>
-  <div id="pieChart"></div>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div><h5 class="title-graph"><strong>営業担当別受注数シェア</strong></h5></div>
+            <div id="pieChart" class="chart"></div>
     <!--<svg width="960" height="500"></svg>-->
+  </ion-col>
+  <ion-col>
+    <table class="table">
+      <caption><h5><strong>社員別営業成績</strong></h5></caption>
+      <tr>
+        <th>今月順位</th>
+        <th>社員名</th>
+        <th>目標▼</th>
+        <th>受注数▼</th>
+        <th>達成率▼</th>
+      </tr>
+    </table>
+    <table *ngFor="let item of items" class="table">
+      <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.party}}</td>
+        <td>{{item.goal}}件</td>
+        <td>{{item.electionP}}件</td>
+        <td>{{item.electionP/item.goal | percent}}</td>
+      </tr>
+    </table>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
 </ion-content>
 

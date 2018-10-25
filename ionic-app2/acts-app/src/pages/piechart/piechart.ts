@@ -15,7 +15,7 @@ export class PiechartPage {
   icons: string[];
   items: Array<{ title: string, note: string, icon: string }>;
 
-  margin = {top: 20, right: 0, bottom: 30, left: 0};
+  margin = {top: 0, right: 0, bottom: 0, left: 0};
   width: number;
   height: number;
   radius: number;
@@ -32,9 +32,10 @@ export class PiechartPage {
 
   constructor(public navCtrl: NavController) {
     this.width = 1200 - this.margin.left - this.margin.right ;
-    this.height = 600 - this.margin.top - this.margin.bottom;
+    this.height = 700 - this.margin.top - this.margin.bottom;
     this.radius = Math.min(this.width, this.height) / 2;
     this.pieChartData = StatsPieChart;
+    this.items = StatsPieChart;
   }
   
   ionViewDidEnter() {
@@ -42,6 +43,7 @@ export class PiechartPage {
     this.covertData(this.pieChartData);
     this.drawPieChart(this.covertedPieChartData);
     this.showPieCharData(this.pieChartData);
+    this.ionViewDidLoad();
   }
 
   initSvg(){
@@ -64,8 +66,8 @@ export class PiechartPage {
 
     this.svg = d3.select("#pieChart")
         .append("svg")
-        .attr("width", '50%')
-        .attr("height", '50%')
+        .attr("width", '70%')
+        .attr("height", '70%')
         .attr('viewBox','0 0 '+Math.min(this.width,this.height)+' '+Math.min(this.width,this.height))
         .append("g")
         .attr("transform", "translate(" + Math.min(this.width,this.height) / 2 + "," + Math.min(this.width,this.height) / 2 + ")");
@@ -87,7 +89,7 @@ export class PiechartPage {
     g.append("text").attr("transform", (d: any) => "translate(" + this.labelPer.centroid(d) + ")")
         .attr("dy", ".25em")
         .attr("dx", "-1.5em")
-        .text((d: any) => d.data.electionP + "%");
+        .text((d: any) => d.data.p + "%");
   }
   covertData(data:Array<any>){
     var sum = 0;
@@ -95,8 +97,8 @@ export class PiechartPage {
         sum = sum + data[i].electionP;
     }
     for (var y=0; y<data.length; y++){
-        data[y].electionP =Math.round(data[y].electionP/sum*100,2);
-        console.log(data[y].electionP);
+        data[y].p =data[y].electionP/sum;
+        console.log(data[y].p);
     }
     this.covertedPieChartData = data;
   }
@@ -105,5 +107,8 @@ export class PiechartPage {
           console.log(data[i]);
       }
   }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad Piechart');
+}
 }
 

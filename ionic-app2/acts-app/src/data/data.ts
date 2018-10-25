@@ -1,6 +1,6 @@
 export const StatsPieChart: any[] = [
-    { id: 1, party: '田中',electionP:17,goal:15},
-    { id: 2, party: '加藤',electionP:16,goal:15},
+    { id: 1, party: '田中',electionP:17,goal:15,P:0},
+    { id: 2, party: '加藤',electionP:16,goal:15,P:0},
     { id: 3, party: '伊藤',electionP:14,goal:15},
     { id: 4, party: '佐野',electionP:12,goal:15},
     { id: 5, party: '太田',electionP:11,goal:10},
