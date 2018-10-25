@@ -26,17 +26,22 @@ export class PiechartPage {
   pie: any;
   color: any;
   svg: any;
-
+  pieChartData: Array<Object>;
+  covertedPieChartData: Array<Object>;
+  
 
   constructor(public navCtrl: NavController) {
     this.width = 1200 - this.margin.left - this.margin.right ;
     this.height = 600 - this.margin.top - this.margin.bottom;
     this.radius = Math.min(this.width, this.height) / 2;
+    this.pieChartData = StatsPieChart;
   }
-
+  
   ionViewDidEnter() {
     this.initSvg();
-    this.drawPieChart();
+    this.covertData(this.pieChartData);
+    this.drawPieChart(this.covertedPieChartData);
+    this.showPieCharData(this.pieChartData);
   }
 
   initSvg(){
@@ -64,10 +69,12 @@ export class PiechartPage {
         .attr('viewBox','0 0 '+Math.min(this.width,this.height)+' '+Math.min(this.width,this.height))
         .append("g")
         .attr("transform", "translate(" + Math.min(this.width,this.height) / 2 + "," + Math.min(this.width,this.height) / 2 + ")");
-  }
-  drawPieChart() {
+    
+    }
+    
+  drawPieChart(data:Array<any>) {
     let g = this.svg.selectAll(".arc")
-        .data(this.pie(StatsPieChart))
+        .data(this.pie(data))
         .enter().append("g")
         .attr("class", "arc");
     g.append("path").attr("d", this.arc)
@@ -81,6 +88,22 @@ export class PiechartPage {
         .attr("dy", ".25em")
         .attr("dx", "-1.5em")
         .text((d: any) => d.data.electionP + "%");
+  }
+  covertData(data:Array<any>){
+    var sum = 0;
+    for (var i=0; i<data.length; i++){
+        sum = sum + data[i].electionP;
+    }
+    for (var y=0; y<data.length; y++){
+        data[y].electionP =Math.round(data[y].electionP/sum*100,2);
+        console.log(data[y].electionP);
+    }
+    this.covertedPieChartData = data;
+  }
+  showPieCharData(data:Array<any>) {
+      for (var i=0; i<data.length; i++){
+          console.log(data[i]);
+      }
   }
 }
 
